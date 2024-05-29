@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+
+/* Hiding scrollbar for demo purposes */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.body-pd {
+  background-color: #f3f2ff;
+  margin: 0;
+  /* height: 100vh; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* padding-top: 12em; */
+  font-family: "DM Sans", sans-serif;
+}
+.wrapper-pd {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container-pd {
+  display: flex;
+}
+
+.calendar-pd {
+  /* width: 50%; Adjust width to cover half of the screen */
+  padding: 15px;
+  box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.table-pd {
+  width: 50%; /* Adjust width to cover half of the screen */
+  padding: 0 15px; /* Add padding to the table */
+}
+
+/* Additional styling for children components if needed */
+.container > * {
+  flex: 1; /* Each component takes equal space */
+}
+
+.container-root {
+  display: flex;
+}
+
+/* Additional styling for children components if needed */
+.container-root > * {
+  flex: 1; /* Each component takes equal space */
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+.calendar--nav {
+  margin: -15px -15px 15px;
+  padding: 0 15px;
+  background-color: #4c3b9d;
+  color: #fff;
+  height: 70px;
+  position: relative;
+}
+.calendar--nav a {
+  position: absolute;
+  cursor: pointer;
+  left: 10px;
+  font-size: 32px;
+  line-height: 1;
+  top: 16px;
+  width: 30px;
+  text-align: center;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.calendar--nav a:hover {
+  color: #fff;
+}
+.calendar--nav a:last-child {
+  left: auto;
+  right: 10px;
+}
+.calendar--nav h1 {
+  margin: 0;
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 66px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.calendar--nav small {
+  font-weight: 300;
+  font-size: 60%;
+}
+.calendar--days {
+  font-size: 0;
+}
+.calendar--days span {
+  width: 14.28571%;
+  display: inline-block;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  margin: 8px 0;
+  line-height: 34px;
+  position: relative;
+  font-size: 16px;
+}
+.calendar--days span.label {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  cursor: initial;
+}
+.calendar--days span.active {
+  font-weight: 700;
+  background-color: rgba(182, 112, 244, 0.05);
+  border-radius: 12px;
+}
+.calendar--days span.muted {
+  color: rgba(0, 0, 0, 0.3);
+}
+.calendar--days span.between {
+  border-radius: 0;
+}
+.calendar--days span.start,
+.calendar--days span.between,
+.calendar--days span.end {
+  background-color: #9d83ef;
+  color: #fff;
+}
+.calendar--days span.start {
+  border-radius: 12px 0 0 12px;
+}
+.calendar--days span.end {
+  border-radius: 0 12px 12px 0;
+}
+.calendar--days span.start.end {
+  border-radius: 12px;
+}
+.calendar--days span.between:nth-child(7n):after,
+.calendar--days span.start:nth-child(7n):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #9d83ef;
+  width: 20px;
+}
+.calendar--days span.between:nth-child(7n + 1):after,
+.calendar--days span.end:nth-child(7n + 1):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  background-color: #9d83ef;
+  width: 20px;
+}
+.calendar--days span.start.end:after {
+  display: none;
+}
+
+.item-content {
+  height: 100%;
+  border: 0px solid rgba(123, 123, 123, 0.498039);
+  border-radius: 4px;
+  color: rgb(153, 153, 153);
+  line-height: 90px;
+  padding-left: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+}
+
+/* Extra Styling */
+.list-pd {
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.list-title-pd {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0.5em 1em;
+  color: #fff;
+}
+
+.fe-title {
+  background: #9d83ef;
+}
+
+.list-item-pd {
+  background: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  color: #23244c;
+}
+
+/* Base Styling */
+.list-pd {
+  overflow-y: scroll;
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+}
+
+.list-title-pd {
+  position: sticky;
+  top: 0;
+}
+.span-pd {
+  font-size: 15px;
+  font-weight: 100;
+  color: #5b5b5e;
+}
+.data-container {
+  padding: 2rem;
+  margin: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+}
+.info {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.period-days {
+  font-size: 30px;
+  color: #4c3b9d;
+  font-weight: bold;
+}
+.info b,
+.span-pd {
+  font-size: 15px;
+}
+
+.popup-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content {
+  position: absolute;
+  top: 40px; /* Adjust as needed */
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.popup-arrow {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f9f9f9;
+  cursor: pointer;
+}
+
+.popup-inner-content {
+  /* Add additional styling for inner content if needed */
+}
